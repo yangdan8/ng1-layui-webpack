@@ -1,0 +1,41 @@
+<style ng-bind="::vm.css"></style>
+<div class="pi-account-login">
+    <div class="pi-login" ng-cloak>
+        <form class="layui-form" action="">
+            <div class="layui-form-item pi-title">
+                <img src="../../../../static/img/login_logo.png" />
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">用户名：</label>
+                <div class="layui-input-block">
+                    <input type="text" ng-model="vm.username" lay-verify="required" placeholder="请输入用户名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码：</label>
+                <div class="layui-input-block">
+                    <input type="text" ng-model="vm.pwd" lay-verify="required" placeholder="请输入您的密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item pi-verify">
+                <div class="layui-inline pi-verify-code">
+                    <label class="layui-form-label">验证码：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" ng-model="vm.verifyCode" lay-verify="required" placeholder="请输入验证码" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline pi-verify-img">
+                    <a href="javascript:;" alt="验证码" title="点击更换一张">
+                        <img src="../../../../static/img/genimage.png" />
+                        <span>换一张</span>
+                    </a>
+                </div>
+            </div>
+            <hr />
+            <div class="layui-form-item pi-btns">
+                <a href="/#!/home" class="layui-btn layui-btn-big pi-btn-login" lay-submit="" lay-filter="demo1">登录</a>
+                <button type="reset" class="layui-btn layui-btn-primary layui-btn-big">重置</button>
+            </div>
+        </form>
+    </div>
+</div>
