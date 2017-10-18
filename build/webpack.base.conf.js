@@ -30,6 +30,7 @@ module.exports = {
                 loader: 'eslint-loader',
                 enforce: 'pre',
                 include: [resolve('src'), resolve('test')],
+                exclude: /node_modules/,
                 options: {
                     formatter: require('eslint-friendly-formatter')
                 }
@@ -37,15 +38,17 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src'), resolve('test')]
+                include: [resolve('src'), resolve('test')],
+                exclude: /node_modules/
             },
             {
-                test: /\.html$/,
-                loader: 'html-loader',
-                include: [resolve('src')]
+                test: /\.(htm|html)$/,
+                use: ['html-loader'],
+                include: [resolve('src')],
+                exclude: /node_modules/
             },
             {
-                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                test: /\.(ico|png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000,
@@ -72,6 +75,7 @@ module.exports = {
                 test: /\.json$/,
                 loader: 'file-loader',
                 include: [resolve('src/i18n')],
+                exclude: /node_modules/,
                 options: {
                     name: utils.assetsPath('i18n/[name].[hash:8].[ext]')
                 }

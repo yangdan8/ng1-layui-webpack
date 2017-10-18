@@ -73,12 +73,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             chunks: ['vendor']
-        }),
-        new CopyWebpackPlugin([{
-            from: path.resolve(__dirname, '../static'),
-            to: config.build.assetsSubDirectory,
-            ignore: ['.*']
-        }])
+        }) //,
+        // new CopyWebpackPlugin([{
+        //     from: path.resolve(__dirname, '../static'),
+        //     to: config.build.assetsSubDirectory,
+        //     ignore: ['.*']
+        // }])
     ]
 });
 
@@ -90,9 +90,9 @@ if (config.build.productionGzip) {
             asset: '[path].gz[query]',
             algorithm: 'gzip',
             test: new RegExp(
-                `\\.(${
-                  config.build.productionGzipExtensions.join('|')
-                })$`
+                '\\.(' +
+                config.build.productionGzipExtensions.join('|') +
+                ')$'
             ),
             threshold: 10240,
             minRatio: 0.8

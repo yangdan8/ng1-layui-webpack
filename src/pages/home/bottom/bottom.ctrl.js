@@ -1,10 +1,9 @@
 import angular from 'angular';
-const css = require('./bottom.scss');
+require('./bottom.scss');
 
 class HomeBottomController {
     constructor($scope) {
         this.$scope = $scope;
-        this.css = css[0][1];
         this.title = '这里是首页的底部';
     }
 }
