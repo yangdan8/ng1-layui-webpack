@@ -5,7 +5,7 @@ const fnRouting = function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('account_login', {
             url: '/account/login',
-            templateUrl: require('./login/login.html'),
+            template: require('./login/login.html'),
             controller: 'AccountLoginController as vm',
             resolve: {
                 loadAccountLoginController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
@@ -23,7 +23,6 @@ const fnRouting = function($stateProvider, $urlRouterProvider) {
         });
 };
 
-console.log(11);
 export default angular
     .module('pages.account.routing', [])
     .config(['$stateProvider', '$urlRouterProvider', fnRouting]);

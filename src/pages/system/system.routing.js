@@ -4,7 +4,7 @@ const fnRouting = function($stateProvider) {
     $stateProvider
         .state('system_about', {
             url: '/system/about',
-            templateUrl: require('./about/about.html'),
+            template: require('./about/about.html'),
             controller: 'SystemAboutController as vm',
             resolve: {
                 loadSystemAboutController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {

@@ -45,23 +45,24 @@ module.exports = {
                 test: /\.html?$/,
                 use: 'html-loader',
                 include: [resolve('src')],
-                exclude: [/node_modules/, resolve('src/pages')]
-            },
-            {
-                test: /\.html?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 1,
-                    name: utils.assetsPath('html/[name].[hash:8].[ext]')
-                },
-                include: [resolve('src/pages')],
                 exclude: /node_modules/
+                    //exclude: [/node_modules/, resolve('src/pages')]
             },
+            // {
+            //     test: /\.html?$/,
+            //     loader: 'url-loader',
+            //     options: {
+            //         limit: 1,
+            //         name: utils.assetsPath('html/[name].[hash:8].[ext]')
+            //     },
+            //     include: [resolve('src/pages')],
+            //     exclude: /node_modules/
+            // },
             {
                 test: /\.(ico|png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
-                    limit: 10000,
+                    limit: 1,
                     name: utils.assetsPath('img/[name].[hash:8].[ext]')
                 }
             },
