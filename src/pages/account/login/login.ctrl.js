@@ -6,8 +6,8 @@ class AccountLoginController {
     constructor($scope) {
         this.$scope = $scope;
         this.title = '这里是登录页';
-        $.ajax('/api/api/User/GetStructuringData?pageId=3980').done((data) => {
-            console.log(data);
+        $.ajax('/api/5aV1bjqh_Q23odCf/static/superman/css/mt_min_d0e7c6d2.css').done((data) => {
+            console.log('来自百度的数据', data);
         });
     }
 }

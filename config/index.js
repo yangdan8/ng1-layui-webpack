@@ -30,7 +30,7 @@ module.exports = {
         // view more https://vuejs-templates.github.io/webpack/proxy.html
         proxyTable: {
             '/api': {
-                target: 'http://localhost:9745',
+                target: 'https://ss0.bdstatic.com',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': '/'
