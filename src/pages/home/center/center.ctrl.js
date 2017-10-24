@@ -11,4 +11,4 @@ class HomeCenterController {
 
 export default angular
     .module('pages.home.center.ctrl', [])
-    .controller('HomeCenterController', HomeCenterController);
+    .controller('HomeCenterController', ['$scope', HomeCenterController]);

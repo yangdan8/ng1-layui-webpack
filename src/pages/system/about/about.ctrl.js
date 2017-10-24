@@ -10,4 +10,4 @@ class SystemAboutController {
 
 export default angular
     .module('pages.system.about.ctrl', [])
-    .controller('SystemAboutController', SystemAboutController);
+    .controller('SystemAboutController', ['$scope', SystemAboutController]);

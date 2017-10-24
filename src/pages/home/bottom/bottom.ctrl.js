@@ -10,4 +10,4 @@ class HomeBottomController {
 
 export default angular
     .module('pages.home.bottom.ctrl', [])
-    .controller('HomeBottomController', HomeBottomController);
+    .controller('HomeBottomController', ['$scope', HomeBottomController]);

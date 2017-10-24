@@ -7,8 +7,8 @@ import 'ilayui/dist/css/layui.css';
 import './app.scss';
 import routing from './config/router';
 
-export default angular
-    .module('app', [
-        oclazyload,
-        routing.name
-    ]);
+// localStorage.setItem('app-base-url', location.pathname);
+angular.module('app', [
+    oclazyload,
+    routing.name
+]);

@@ -10,4 +10,4 @@ class HomeController {
 
 export default angular
     .module('pages.home.ctrl', [])
-    .controller('HomeController', HomeController);
+    .controller('HomeController', ['$scope', HomeController]);

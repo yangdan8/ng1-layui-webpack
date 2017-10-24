@@ -10,4 +10,4 @@ class HomeTopController {
 
 export default angular
     .module('pages.home.top.ctrl', [])
-    .controller('HomeTopController', HomeTopController);
+    .controller('HomeTopController', ['$scope', HomeTopController]);

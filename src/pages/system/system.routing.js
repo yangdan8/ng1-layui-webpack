@@ -7,7 +7,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./about/about.html'),
             controller: 'SystemAboutController as vm',
             resolve: {
-                loadSystemAboutController: ($q, $ocLazyLoad) => {
+                loadSystemAboutController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./about/about.ctrl').default;
@@ -17,11 +17,11 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         });
 };
 
 export default angular
     .module('pages.system.routing', [])
-    .config(fnRouting);
+    .config(['$stateProvider', fnRouting]);

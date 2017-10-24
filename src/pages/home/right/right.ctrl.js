@@ -10,4 +10,4 @@ class HomeRightController {
 
 export default angular
     .module('pages.home.right.ctrl', [])
-    .controller('HomeRightController', HomeRightController);
+    .controller('HomeRightController', ['$scope', HomeRightController]);

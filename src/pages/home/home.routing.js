@@ -7,7 +7,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./home.html'),
             controller: 'HomeController as vm',
             resolve: {
-                loadHomeController: ($q, $ocLazyLoad) => {
+                loadHomeController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./home.ctrl').default;
@@ -17,7 +17,7 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         })
         .state('home_top', {
@@ -25,7 +25,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./top/top.html'),
             controller: 'HomeTopController as vm',
             resolve: {
-                loadHomeTopController: ($q, $ocLazyLoad) => {
+                loadHomeTopController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./top/top.ctrl').default;
@@ -35,7 +35,7 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         })
         .state('home_bottom', {
@@ -43,7 +43,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./bottom/bottom.html'),
             controller: 'HomeBottomController as vm',
             resolve: {
-                loadHomeBottomController: ($q, $ocLazyLoad) => {
+                loadHomeBottomController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./bottom/bottom.ctrl').default;
@@ -53,7 +53,7 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         })
         .state('home_left', {
@@ -61,7 +61,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./left/left.html'),
             controller: 'HomeLeftController as vm',
             resolve: {
-                loadHomeLeftController: ($q, $ocLazyLoad) => {
+                loadHomeLeftController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./left/left.ctrl').default;
@@ -71,7 +71,7 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         })
         .state('home_right', {
@@ -79,7 +79,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./right/right.html'),
             controller: 'HomeRightController as vm',
             resolve: {
-                loadHomeRightController: ($q, $ocLazyLoad) => {
+                loadHomeRightController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./right/right.ctrl').default;
@@ -89,7 +89,7 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         })
         .state('home_center', {
@@ -97,7 +97,7 @@ const fnRouting = function($stateProvider) {
             templateUrl: require('./center/center.html'),
             controller: 'HomeCenterController as vm',
             resolve: {
-                loadHomeCenterController: ($q, $ocLazyLoad) => {
+                loadHomeCenterController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
                             const mdl = require('./center/center.ctrl').default;
@@ -107,11 +107,11 @@ const fnRouting = function($stateProvider) {
                             resolve(mdl.controller);
                         });
                     });
-                }
+                }]
             }
         });
 };
 
 export default angular
     .module('pages.home.routing', [])
-    .config(fnRouting);
+    .config(['$stateProvider', fnRouting]);
