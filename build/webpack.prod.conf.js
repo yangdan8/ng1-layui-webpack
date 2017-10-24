@@ -57,10 +57,6 @@ const webpackConfig = merge(baseWebpackConfig, {
             },
             chunksSortMode: 'dependency'
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: utils.assetsPath('html/[name].[hash:8].html'),
-        //     template: 'src/pages/account/login/login.html'
-        // }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
