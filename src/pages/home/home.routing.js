@@ -4,7 +4,7 @@ const fnRouting = function($stateProvider) {
     $stateProvider
         .state('home', {
             url: '/home',
-            template: require('./home.html'),
+            templateUrl: require('./home.html'),
             controller: 'HomeController as vm',
             resolve: {
                 loadHomeController: ($q, $ocLazyLoad) => {
@@ -22,7 +22,7 @@ const fnRouting = function($stateProvider) {
         })
         .state('home_top', {
             url: '/home/top',
-            template: require('./top/top.html'),
+            templateUrl: require('./top/top.html'),
             controller: 'HomeTopController as vm',
             resolve: {
                 loadHomeTopController: ($q, $ocLazyLoad) => {
@@ -40,7 +40,7 @@ const fnRouting = function($stateProvider) {
         })
         .state('home_bottom', {
             url: '/home/bottom',
-            template: require('./bottom/bottom.html'),
+            templateUrl: require('./bottom/bottom.html'),
             controller: 'HomeBottomController as vm',
             resolve: {
                 loadHomeBottomController: ($q, $ocLazyLoad) => {
@@ -58,7 +58,7 @@ const fnRouting = function($stateProvider) {
         })
         .state('home_left', {
             url: '/home/left',
-            template: require('./left/left.html'),
+            templateUrl: require('./left/left.html'),
             controller: 'HomeLeftController as vm',
             resolve: {
                 loadHomeLeftController: ($q, $ocLazyLoad) => {
@@ -76,7 +76,7 @@ const fnRouting = function($stateProvider) {
         })
         .state('home_right', {
             url: '/home/right',
-            template: require('./right/right.html'),
+            templateUrl: require('./right/right.html'),
             controller: 'HomeRightController as vm',
             resolve: {
                 loadHomeRightController: ($q, $ocLazyLoad) => {
@@ -94,7 +94,7 @@ const fnRouting = function($stateProvider) {
         })
         .state('home_center', {
             url: '/home/center',
-            template: require('./center/center.html'),
+            templateUrl: require('./center/center.html'),
             controller: 'HomeCenterController as vm',
             resolve: {
                 loadHomeCenterController: ($q, $ocLazyLoad) => {

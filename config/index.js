@@ -29,12 +29,12 @@ module.exports = {
         assetsPublicPath: '/',
         // view more https://vuejs-templates.github.io/webpack/proxy.html
         proxyTable: {
-            '**': {
-                target: 'http://localhost:9090',
-                filter: function(pathname, req) {
-                    return pathname.match('^/api'); // && req.method === 'GET'
-                }
-            },
+            // '**': {
+            //     target: 'http://localhost:9090',
+            //     filter: function(pathname, req) {
+            //         return pathname.match('^/api'); // && req.method === 'GET'
+            //     }
+            // },
             // '/list': {
             //     target: 'http://localhost:8080',
             //     changeOrigin: true,
