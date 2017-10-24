@@ -5,12 +5,14 @@ const fnRouting = function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('account_login', {
             url: '/account/login',
-            template: require('./login/login.html'),
+            template: '',
             controller: 'AccountLoginController as vm',
             resolve: {
                 loadAccountLoginController: ['$q', '$ocLazyLoad', ($q, $ocLazyLoad) => {
                     return $q((resolve) => {
                         require.ensure([], () => {
+                            $stateProvider.stateRegistry.states.account_login
+                                .views.$default.template = require('./login/login.html');
                             const mdl = require('./login/login.ctrl').default;
                             $ocLazyLoad.load({
                                 name: mdl.name
